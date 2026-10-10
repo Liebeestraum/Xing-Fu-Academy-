@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xing Fu Academy</title>
+    <link rel = "icon" href = "Images/幸福.ico" type = "logo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="MainPage.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo"><img src="Images/幸福.png" alt="Xing Fu Academy logo"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="lang-switcher">
+                        <button class="lang-current" aria-haspopup="true" aria-expanded="false" aria-label="Change language">EN <span class="caret" aria-hidden="true"></span></button>
+                        <ul class="lang-menu" role="menu" aria-label="Language">
+                            <li role="none"><a role="menuitem" href="MainPage.html" aria-current="true">English (EN)</a></li>
+                            <li role="none"><a role="menuitem" href="MainPage-zh-Hans.html">简体中文 (Mandarin Chinese - Simplified)</a></li>
+                            <li role="none"><a role="menuitem" href="MainPage-zh-Hant.html">繁體中文 (Mandarin Chinese - Traditional)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <span class="hero-pretitle">Xing Fu Academy</span>
+            <h1 lang="zh">大家好! Welcome to Xing Fu Academy!</h1>
+            <p>We are here to be the one who guides you for reaching your dreams and goals in China</p>
+        </div>
+        <div class="hero-actions">
+            <button class="hero-play" aria-haspopup="dialog" aria-controls="video-modal" aria-label="Play video"
+                data-video="https://youtu.be/0DzZgBd4W1Q?si=LWJystPG9fLcrou8">
+                <span class="icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                        <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Feature Intro Section (mirrors Pacific style) -->
+    <section class="feature-intro" id="intro-styles">
+        <!--<div class="feature-intro-inner">
+            <div class="feature-cards">
+                <article class="fcard fcard-blue">
+                    <div class="fcard-body">
+                        <h3 class="fcard-title">Mandarin Mastery</h3>
+                        <p class="fcard-text">Sharpen your skills in the world's most spoken native language.</p>
+                    </div>
+                </article>
+                <article class="fcard fcard-teal">
+                    <div class="fcard-body">
+                        <h3 class="fcard-title">Travel Arrangements</h3>
+                        <p class="fcard-text">Visas, documents & support for a smooth first step in China.</p>
+                    </div>
+                </article>
+                <article class="fcard fcard-mint">
+                    <div class="fcard-body">
+                        <h3 class="fcard-title">Private Guide</h3>
+                        <p class="fcard-text">Personalized mentorship to adapt confidently to local life.</p>
+                    </div><!-- end fcard-body -->
+                </article>
+                <article class="fcard fcard-rose">
+                    <div class="fcard-body">
+                        <h3 class="fcard-title">Location Manager</h3>
+                        <p class="fcard-text">Expert help navigating cities, campuses & regional culture.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="feature-copy">
+                <span class="hero-pretitle feature-pretitle">Welcome to Xing Fu Academy</span>
+                <h2 class="feature-heading">Start your journey with us!</h2>
+                <p class="lead">Delve in to one of the world's most oldest civilisations</p>
+                <p>Aren't you sure what to do and where to go? Don't worry, China will get you.</p>
+                <p>Want to pursue your studies? We are the home of some of the world's prestigious universities available. And we are also one of the most active and crucial STEM hubs in the entire world.</p>
+                <p>Are you a fan of history and culture? We got plethora of civilisations, predates to the very early creation of this mega civilisation, to become one of the most technologically advanced country in the current world by today.</p>
+                <p>Do you want to start or pursue your professional career? Don't worry, we got a bunch of job opportunities in many forms, especially those who are extraordinarily talented and got so much potential.</p>
+                <p>Or do you have any other plans involving China? Don't worry, <span lang = "zh"> 不用擔心, </span> China will get you all covered.</p>
+                <a href="#services" class="btn feature-cta">Start your journey here!</a>
+                <span class="icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                        <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+                    </svg>
+                </span>
+                <p> Play here</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section (Re-themed as Study Pathways) -->
+    <section class="destinations" id="destinations">
+        <div class="destinations-inner">
+            <span class="hero-pretitle destinations-pretitle">Academic Pathways</span>
+            <h2 class="destinations-heading">Choose Your Study Focus</h2>
+            <div class="destinations-grid">
+                <!-- Mandarin & Linguistics -->
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="Mandarin & Linguistics pathway">
+                        <img src="Images/zhongwen.png" alt="Mandarin characters study" loading="lazy">
+                        <span class="dest-label">Mandarin & Linguistics</span>
+                        <span class="dest-badge">Core Track</span>
+                    </a>
+                </article>
+                <!-- Cultural Heritage & History -->
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="Cultural Heritage & History pathway">
+                        <img src="Images/ancientchinesetemple.png" alt="Ancient Chinese temple roof detail" loading="lazy">
+                        <span class="dest-label">Heritage & History</span>
+                        <span class="dest-badge">Foundations</span>
+                    </a>
+                </article>
+                <!-- Modern China & Innovation -->
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="Modern China & Innovation pathway">
+                        <img src="Images/chinamoderncity.png" alt="Modern skyline of a Chinese city" loading="lazy">
+                        <span class="dest-label">Modern China</span>
+                        <span class="dest-badge">Urban Track</span>
+                    </a>
+                </article>
+                <!-- Regional Dialects & Diversity -->
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="Regional Dialects & Diversity pathway">
+                        <img src="Images/chinesedialects.png" alt="Chinese dialect diversity concept" loading="lazy">
+                        <span class="dest-label">Dialects & Diversity</span>
+                        <span class="dest-badge">Advanced</span>
+                    </a>
+                </article>
+                <!-- Mobility & Daily Life (optional 5th card) -->
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="Daily Life & Mobility pathway">
+                        <img src="Images/chineseridingbike.png" alt="Local daily life - cycling scene" loading="lazy">
+                        <span class="dest-label">Daily Life Adaptation</span>
+                        <span class="dest-badge">Practical</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-subtitle">About</div>
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Established in 2025, by a current, second year student at Tarumanagara University, Xing Fu Academy is dedicated to helping students achieve their dreams in China, whether it be studying, working, having a vacation, or living in this land full of unique civilisations from time to time.</p>
+                </div>
+                <div class="about-image">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-subtitle">Services</div>
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                    <div class="service-card">
+                        <img class="service-thumb" src="Images/zhongwen.png" alt="Mandarin Classes">
+                        <div class="service-info">
+                            <h3>Mandarin Classes</h3>
+                            <p>Sharpens your linguistic skills before entering the Chinese world.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img class="service-thumb" src="Images/passportvisa.png" alt="Visa, Documents, and Immigration Services">
+                        <div class="service-info">
+                            <h3>Visa, Documents, and Immigration Services</h3>
+                            <p>Guiding you for your first step on this land of bamboos and pandas.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img class="service-thumb" src="Images/chineseridingbike.png" alt="Living in China Workshops">
+                        <div class="service-info">
+                            <h3>"Living in China for the first time" Workshops</h3>
+                            <p>Equipping you with essential skills and knowledge for adapting towards the new, Chinese ways of living.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img class="service-thumb" src="Images/chinesedialects.png" alt="Chinese Dialects Classes">
+                        <div class="service-info">
+                            <h3>Chinese Dialects Classes</h3>
+                            <p>Dive deeper into the rich tapestry of Chinese dialects and connect more deeper with your root origins.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img class="service-thumb" src="Images/chinamoderncity.png" alt="Explore the Modern life of China">
+                        <div class="service-info">
+                            <h3>Explore the Modern life of China</h3>
+                            <p>Discover the vibrant urban culture and modern lifestyle in one of the world's superpower bustling cities.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img class="service-thumb" src="Images/ancientchinesetemple.png" alt="Explore the Ancient side of China">
+                        <div class="service-info">
+                            <h3>Explore the Ancient side of China</h3>
+                            <p>Step back in time and immerse yourself in the rich history and cultural heritage of ancient China.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Overlap Section -->
+    <section class="promo-overlap" id="promo">
+        <div class="promo-banner" aria-hidden="true">
+            <button class="promo-play" aria-haspopup="dialog" aria-label="Play overview video" data-video="https://www.youtube.com/embed/ysz5S6PUM-U">
+                <span class="triangle" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="promo-inner">
+            <figure class="promo-photo">
+                <img src="Images/wallofchina2.png" alt="Great Wall of China mountain ridge at sunrise" loading="lazy">
+            </figure>
+            <div class="promo-copy">
+                <span class="promo-pretitle">About Us</span>
+                <h2 class="promo-heading">Make your Chinese <br> dreams and wonders <br> come true </h2>
+                <p class="promo-text">With us, we can guide you to see through the real beauty of China, and achieve your goals, whatever it is, in China</p>
+                <a href="#destinations" class="btn promo-cta">Book Your Destination</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Recent Post Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <span class="hero-pretitle blog-pretitle">Our Blog</span>
+            <h2 class="blog-heading">Recent Post</h2>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-media">
+                        <img src="Images/chinamoderncity.png" alt="Modern Chinese city skyline at dusk">
+                        <div class="post-date"><span class="day">11</span><span class="date-meta"><span class="year">2025</span><span class="month">September</span></span></div>
+                    </div>
+                    <div class="post-body">
+                        <h3 class="post-title">Most Popular Place in This World</h3>
+                        <a href="#" class="post-read">Read more</a>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="post-media">
+                        <img src="Images/chineseridingbike.png" alt="Cyclists experiencing local culture">
+                        <div class="post-date"><span class="day">11</span><span class="date-meta"><span class="year">2025</span><span class="month">September</span></span></div>
+                    </div>
+                    <div class="post-body">
+                        <h3 class="post-title">Most Popular Place in This World</h3>
+                        <a href="#" class="post-read">Read more</a>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="post-media">
+                        <img src="Images/ancientchinesetemple.png" alt="Historic Chinese temple architecture">
+                        <div class="post-date"><span class="day">11</span><span class="date-meta"><span class="year">2025</span><span class="month">September</span></span></div>
+                    </div>
+                    <div class="post-body">
+                        <h3 class="post-title">Most Popular Place in This World</h3>
+                        <a href="#" class="post-read">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section -->
+    <section class="cta-banner fixed-size has-image" id="cta">
+        <div class="cta-inner">
+            <h2 class="cta-heading">Xing Fu Academy</h2>
+            <p class="cta-text">With us, you can turn  your dreams and aspirations about China into a reality inside your hand</p>
+            <a href="contact.html" class="btn cta-btn">Ask For Inquiry</a>
+        </div>
+    </section>
+
+        <!-- Footer Top (pre-footer) -->
+        <section class="footer-top">
+            <div class="container">
+                <div class="footer-top-grid">
+                    <div class="ft-col">
+                        <h3>About</h3>
+                        <p>Explore the country with the perfect fuse of ancient past and modern future.</p>
+                        <div class="socials">
+                            <a href="#" class="social" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="social" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" class="social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="ft-col">
+                        <h3>Information</h3>
+                        <ul class="list-plain">
+                            <li>Online Enquiry</li>
+                            <li>General Enquiries</li>
+                            <li>Booking Conditions</li>
+                            <li>Privacy and Policy</li>
+                            <li>Refund Policy</li>
+                            <li>Call Us</li>
+                        </ul>
+                    </div>
+                    <div class="ft-col">
+                        <h3>Experience</h3>
+                        <ul class="list-plain">
+                            <li>Explore China</li>
+                            <li>Life in China</li>
+                            <li>Work in China</li>
+                            <li>Nature in China</li>
+                            <li>Chinese Cultural and National Days</li>
+                            <li>Education in China</li>
+                        </ul>
+                    </div>
+                    <div class="ft-col">
+                        <h3>Have a Questions?</h3>
+                        <ul class="contact-list">
+                            <li><span class="icon">📍</span> A headquarter in Beijing, China</li>
+                            <li><span class="icon">☎️</span> +86 10 1234 5678</li>
+                            <li><span class="icon">✉️</span> helpinquiries@xingfuacademy.co.cn</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025, Xing Fu Academy. All Rights Reserved.</p>
+            <p>A Leading agency to help others overseas reach their dreams in China.</p>
+        </div>
+
+        <div class = "footer-menu">
+            <a href = "#"> Help </a>
+            <a href = "#"> FAQ </a>
+            <a href = "#"> Inquiries </a>
+            <a href = "https://english.www.gov.cn/"> Chinese Government Official Website </a>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Intro video">
+        <div class="video-backdrop" data-close="true"></div>
+        <div class="video-dialog" role="document">
+            <button class="video-close" aria-label="Close video" title="Close">&times;</button>
+            <div class="video-frame">
+                <iframe src="" title="Intro video" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const triggers = document.querySelectorAll('[data-video]');
+        const modal = document.getElementById('video-modal');
+        const iframe = modal ? modal.querySelector('iframe') : null;
+        const closeBtn = modal ? modal.querySelector('.video-close') : null;
+        let lastFocus = null;
+
+        function normalizeYouTube(url){
+            if(!url) return '';
+            // Accept forms: youtu.be/ID, youtube.com/watch?v=ID, youtube.com/shorts/ID, already embed
+            const ytRegex = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{6,})/;
+            const match = url.match(ytRegex);
+            if(match && match[1]){
+                return 'https://www.youtube.com/embed/' + match[1];
+            }
+            return url; // fallback untouched
+        }
+        function withAutoplay(url){
+            if (!url) return '';
+            const clean = normalizeYouTube(url);
+            return clean.includes('?') ? clean + '&autoplay=1' : clean + '?autoplay=1';
+        }
+        function openModal(url){
+            if (!modal || !iframe) return;
+            lastFocus = document.activeElement;
+            iframe.src = withAutoplay(url);
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden','false');
+            setTimeout(()=>{ try{ closeBtn && closeBtn.focus(); }catch(e){} }, 0);
+            document.addEventListener('keydown', onKey);
+        }
+        function closeModal(){
+            if (!modal || !iframe) return;
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden','true');
+            iframe.src = '';
+            document.removeEventListener('keydown', onKey);
+            if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        }
+        function onKey(e){ if (e.key === 'Escape') closeModal(); }
+
+        triggers.forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                const url = btn.getAttribute('data-video') || 'https://www.youtube.com/embed/ysz5S6PUM-U';
+                openModal(url);
+            });
+        });
+        if (modal) {
+            modal.addEventListener('click', function(e){
+                if (e.target === modal || e.target.dataset.close === 'true') closeModal();
+            });
+        }
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    })();
+    </script>
+
+</body>
+</html>

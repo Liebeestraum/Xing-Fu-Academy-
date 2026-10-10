@@ -1,0 +1,1896 @@
+/* ================= Promo Overlap Section ================= */
+.promo-overlap {
+  position: relative;
+  background: #fff; /* fallback */
+  padding: 0 0 120px; /* extra bottom breathing */
+  overflow: hidden;
+}
+/* Removed prior pseudo-element background that caused a washed/blurry full-section backdrop.
+   Keep section clean so only the top banner image provides visual impact. */
+.promo-banner {
+  position: relative;
+  height: 340px;
+  /* Use explicit layering so we can swap or stack images without affecting content */
+  background: #000; /* fallback while image loads */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* Image layer (crisp, no blur) */
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Updated to sunrise image (rename file if needed). Adjust position so watchtower sits slightly right of center. */
+  background: url("Images/wallofchina2.png") center 45% / cover no-repeat;
+  z-index: 0;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.32, 1);
+  will-change: transform;
+  image-rendering: auto;
+}
+
+/* Correct global feature CTA styles (previously nested by mistake) */
+.feature-cta {
+  margin-top: 28px;
+  background: red;
+  color: yellow;
+  padding: 18px 34px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 10px 24px -8px rgba(255, 0, 0, 0.45),
+    0 6px 14px -6px rgba(255, 0, 0, 0.35);
+  transition: 0.35s;
+  overflow: hidden;
+}
+.feature-cta:hover {
+  /* Simplified: only text color change (already yellow) so no movement */
+  color: yellow;
+}
+/* halo effect replicating hero button */
+.promo-play::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: rgba(255, 90, 31, 0.25);
+  z-index: -1;
+  filter: blur(0.5px);
+  animation: pulse-halo 2.2s ease-in-out infinite;
+}
+.promo-play .triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid yellow; /* slightly larger to match larger button */
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 6px;
+}
+.promo-play:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+/* Optional shared utility: apply to any play button for consistent styling */
+.play-btn-theme {
+  background: red !important;
+  border: 4px solid rgba(255, 255, 0, 0.55) !important;
+  box-shadow: 0 10px 26px -8px rgba(0, 0, 0, 0.42),
+    0 0 0 4px rgba(255, 0, 0, 0.25) inset !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease !important;
+}
+.play-btn-theme:hover {
+  transform: scale(1.06) translateY(-2px) !important;
+  background: linear-gradient(135deg, red, #ff3d00) !important;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5),
+    0 0 0 4px rgba(255, 255, 0, 0.35) inset !important;
+}
+.play-btn-theme .triangle,
+.play-btn-theme svg path {
+  color: yellow !important;
+  stroke: none;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.35));
+}
+
+.promo-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 70px;
+  align-items: start;
+  position: relative;
+  top: -90px; /* pull upward to overlap banner */
+}
+.promo-photo {
+  margin: 0;
+  background: #fff;
+  padding: 6px; /* white frame */
+  box-shadow: 0 12px 34px -12px rgba(0, 0, 0, 0.35);
+  border: 1px solid #e7e7e7;
+}
+.promo-photo img {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+/* ================= Blog Section ================= */
+.blog {
+  padding: 70px 0 40px;
+  background: #fff;
+  position: relative;
+}
+.blog-pretitle {
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  margin: 0 0 10px;
+  color: #ff7b29;
+}
+.blog-heading {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 600;
+  margin: 0 0 45px;
+  letter-spacing: 0.5px;
+  color: #222;
+}
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  align-items: start;
+}
+.post-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.08),
+    0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.12),
+    0 6px 16px -4px rgba(0, 0, 0, 0.08);
+}
+.post-media {
+  position: relative;
+  aspect-ratio: 16/11;
+  overflow: hidden;
+}
+.post-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.post-card:hover .post-media img {
+  transform: scale(1.08);
+}
+.post-date {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: red; /* unified theme */
+  color: yellow; /* unified theme */
+  padding: 6px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.1;
+  box-shadow: 0 4px 10px -3px rgba(0, 0, 0, 0.35);
+}
+.post-date .day {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+.post-date .date-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.post-body {
+  padding: 22px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.post-title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 18px;
+  color: #222;
+}
+.post-read {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: red; /* switched from yellow for better readability on white */
+  position: relative;
+  padding-right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.post-read:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid currentColor;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  margin-top: -7px;
+  transition: 0.3s;
+}
+.post-read:hover:after {
+  right: 0;
+}
+
+/* ================= CTA Banner ================= */
+.cta-banner {
+  background: transparent;
+  color: #fff;
+  padding: 85px 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner.fixed-size {
+  /* refined: treat as a banner strip with stable min height */
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 18px; /* some vertical breathing so text not glued to edges */
+  position: relative;
+}
+.cta-banner.fixed-size .cta-inner {
+  width: 100%;
+}
+/* Optional background image variant */
+.cta-banner.fixed-size.has-image {
+  background: #000;
+}
+.cta-banner.fixed-size.has-image::before {
+  /* background image layer */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.82;
+  filter: brightness(0.9) contrast(1.05);
+}
+.cta-banner.fixed-size.has-image::after {
+  /* gradient overlay for legibility */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.55)
+  );
+}
+.cta-banner.fixed-size.has-image .cta-inner {
+  position: relative;
+  z-index: 1;
+}
+.cta-banner.fixed-size .cta-heading {
+  margin: 0 0 18px;
+}
+.cta-banner.fixed-size .cta-text {
+  margin: 0 0 24px;
+}
+@media (max-width: 900px) {
+  .cta-banner.fixed-size {
+    padding: 46px 20px;
+  }
+}
+@media (max-width: 700px) {
+  .cta-banner.fixed-size {
+    min-height: 260px;
+    padding: 50px 24px;
+  }
+}
+.cta-banner:before,
+.cta-banner:after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 149, 0, 0.6),
+    rgba(255, 94, 0, 0)
+  );
+  filter: blur(4px);
+  opacity: 0.28;
+  animation: floaty 14s linear infinite;
+}
+.cta-banner:after {
+  left: auto;
+  right: -120px;
+  top: -80px;
+  background: radial-gradient(
+    circle at 70% 40%,
+    rgba(255, 94, 0, 0.55),
+    rgba(255, 149, 0, 0)
+  );
+  animation-direction: reverse;
+}
+.cta-banner:before {
+  left: -140px;
+  top: -90px;
+}
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(35px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.cta-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+}
+.cta-heading {
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  letter-spacing: 0.03em;
+  margin: 0 0 22px;
+  font-weight: 600;
+}
+.cta-text {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 0 0 30px;
+  font-weight: 400;
+}
+.cta-btn {
+  background: red;
+  color: #fff !important;
+  padding: 18px 38px;
+  border-radius: 40px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  text-transform: uppercase;
+  box-shadow: none;
+  transition: color 0.25s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.cta-btn:hover {
+  color: yellow !important;
+}
+
+/* === FINAL: Fixed-height parallax CTA strip (reference-like) === */
+/* Refined CTA banner: closer to reference size/structure */
+.cta-banner.fixed-size.has-image {
+  height: 220px; /* reduced height */
+  min-height: 220px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  /* NEW: make this feel like a discrete banner instead of full-bleed */
+  max-width: 1180px; /* tune to taste */
+  width: 100%;
+  margin: 70px auto; /* vertical space + center */
+  border-radius: 0; /* fully boxy */
+  overflow: hidden; /* keep clipping for background consistency */
+  box-shadow: 0 28px 60px -22px rgba(0,0,0,0.45), 0 12px 28px -10px rgba(0,0,0,0.6);
+}
+/* Use ::before for image (with parallax / fixed) and ::after for overlay */
+.cta-banner.fixed-size.has-image:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("Images/wallofchina2.png") center center / cover no-repeat;
+  background-attachment: fixed; /* parallax feel */
+  filter: brightness(0.9) contrast(1.05);
+  width: 100%;
+  height: 100%;
+  border-radius: 0; /* kill inherited bubble shape */
+  /* Remove any accidental transitions */
+  transition: none !important;
+  animation: none !important;
+}
+.cta-banner.fixed-size.has-image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.45); /* lighter uniform overlay for clarity */
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  transition: none !important;
+  animation: none !important;
+}
+/* Neutralize orb styles (already overridden by full-cover pseudo elements) */
+.cta-banner.fixed-size.has-image .cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+.cta-banner.fixed-size.has-image .cta-heading {
+  font-size: clamp(1.4rem, 2.4vw, 2.05rem);
+  margin: 0 0 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.cta-banner.fixed-size.has-image .cta-text {
+  margin: 0 auto 18px;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #e5e5e5;
+}
+.cta-banner.fixed-size.has-image .cta-btn {
+  padding: 16px 40px;
+  font-size: 12px;
+  letter-spacing: 0.17em;
+  box-shadow: 0 12px 28px -10px rgba(255, 108, 0, 0.55),
+    0 8px 18px -12px rgba(255, 108, 0, 0.45);
+}
+.cta-banner.fixed-size.has-image .cta-btn:hover {
+  box-shadow: 0 16px 34px -12px rgba(255, 108, 0, 0.7),
+    0 10px 24px -14px rgba(255, 108, 0, 0.55);
+}
+
+/* Ultra-slim variant */
+/* Revised slim: much shorter strip */
+.cta-banner.fixed-size.has-image.slim {
+  height: 120px;
+  min-height: 120px; /* compact */
+}
+.cta-banner.fixed-size.has-image.slim:after {
+  /* lighter overlay so image shows despite small height */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.48),
+    rgba(0, 0, 0, 0.32) 45%,
+    rgba(0, 0, 0, 0.48)
+  );
+}
+.cta-banner.fixed-size.has-image.slim .cta-heading {
+  font-size: clamp(1rem, 1.9vw, 1.45rem);
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+.cta-banner.fixed-size.has-image.slim .cta-text {
+  display: none !important;
+}
+.cta-banner.fixed-size.has-image.slim .cta-btn {
+  padding: 8px 22px;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  border-radius: 5px;
+}
+@media (max-width: 900px) {
+  .cta-banner.fixed-size.has-image.slim {
+    height: 110px;
+    min-height: 110px;
+  }
+  .cta-banner.fixed-size.has-image.slim .cta-heading {
+    font-size: clamp(0.95rem, 3.2vw, 1.3rem);
+  }
+}
+@media (max-width: 600px) {
+  .cta-banner.fixed-size.has-image.slim {
+    height: 100px;
+    min-height: 100px;
+  }
+  .cta-banner.fixed-size.has-image.slim .cta-btn {
+    padding: 7px 18px;
+    font-size: 10px;
+  }
+}
+
+/* Optional micro variant (even smaller if needed later) */
+.cta-banner.fixed-size.has-image.micro {
+  height: 90px;
+  min-height: 90px;
+}
+.cta-banner.fixed-size.has-image.micro .cta-heading {
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  margin: 0;
+}
+.cta-banner.fixed-size.has-image.micro .cta-btn {
+  padding: 6px 16px;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .cta-banner.fixed-size.has-image {
+    height: 260px;
+    min-height: 260px;
+    margin: 60px auto; /* tighten vertical space on medium screens */
+    border-radius: 0; /* stay boxy */
+  }
+  .cta-banner.fixed-size.has-image .cta-heading {
+    font-size: clamp(1.65rem, 5vw, 2.1rem);
+  }
+}
+@media (max-width: 600px) {
+  .cta-banner.fixed-size.has-image {
+    height: 240px;
+    min-height: 240px;
+    margin: 50px 0; /* allow edge-to-edge on very small screens */
+    max-width: none;
+    border-radius: 0; /* remove rounding to avoid awkward side gaps */
+  }
+  .cta-banner.fixed-size.has-image .cta-text {
+    font-size: 14px;
+  }
+  .cta-banner.fixed-size.has-image .cta-btn {
+    padding: 12px 34px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    background: red;
+    color: #fff !important;
+    box-shadow: none;
+    transition: color 0.25s ease;
+  }
+  .cta-banner {
+    padding: 70px 16px;
+  }
+  .cta-heading {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+}
+
+/* Narrow desktop widths (between large desktop & tablets) */
+@media (max-width: 1250px) and (min-width: 901px) {
+  .cta-banner.fixed-size.has-image {
+    margin: 70px 40px; /* add consistent side breathing when viewport < max-width */
+  }
+}
+
+/* Mobile / tablet fallback: disable fixed attachment for performance & iOS Safari */
+@media (max-width: 900px) {
+  .cta-banner.fixed-size.has-image:before {
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 600px) {
+  .post-date {
+    padding: 5px 8px;
+  }
+  .post-date .day {
+    font-size: 26px;
+  }
+  .post-body {
+    padding: 18px 20px 24px;
+  }
+  .cta-banner {
+    padding: 60px 14px;
+  }
+}
+.promo-copy {
+  padding-top: 34px;
+  text-align: left;
+}
+.promo-pretitle {
+  font-family: "Great Vibes", cursive;
+  font-size: 1rem;
+  color: #c06630;
+  display: inline-block;
+  margin-bottom: 18px;
+  position: relative;
+}
+.promo-pretitle::before {
+  content: "";
+  position: absolute;
+  left: -46px;
+  top: 50%;
+  width: 38px;
+  height: 2px;
+  background: linear-gradient(90deg, #c06630, #f3b47f);
+  transform: translateY(-50%);
+}
+.promo-heading {
+  font-size: 2.2rem;
+  line-height: 1.25;
+  margin: 15px 0 15px;
+  color: #222;
+  font-weight: 600;
+}
+.promo-text {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: #666;
+  max-width: 420px;
+  margin: 0 0 26px;
+}
+.promo-cta {
+  background: red;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.25s ease;
+}
+.promo-cta:hover {
+  color: yellow;
+}
+
+@media (max-width: 1100px) {
+  .promo-inner {
+    grid-template-columns: 460px 1fr;
+    gap: 50px;
+    top: -80px;
+  }
+  .promo-photo img {
+    height: 500px;
+  }
+}
+@media (max-width: 900px) {
+  .promo-inner {
+    grid-template-columns: 1fr;
+    top: -70px;
+  }
+  .promo-photo {
+    justify-self: center;
+    width: 70%;
+  }
+  .promo-photo img {
+    height: 420px;
+  }
+  .promo-copy {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 650px) {
+  .promo-photo {
+    width: 88%;
+    padding: 5px;
+  }
+  .promo-photo img {
+    height: 360px;
+  }
+  .promo-heading {
+    font-size: 1.9rem;
+  }
+  .promo-inner {
+    top: -60px;
+    padding: 0 34px;
+  }
+}
+@media (max-width: 500px) {
+  .promo-photo img {
+    height: 300px;
+  }
+  .promo-heading {
+    font-size: 1.7rem;
+  }
+  .promo-text {
+    font-size: 0.78rem;
+  }
+  .promo-inner {
+    top: -50px;
+  }
+}
+/* Basic Reset & Body Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Noto Sans SC", "Noto Sans TC", "Microsoft YaHei",
+    "PingFang SC", "PingFang TC", "Heiti TC", "SimSun", Arial, sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Smooth anchor scrolling */
+}
+
+/* Reusable Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Padding */
+section {
+  padding: 60px 0;
+  text-align: center;
+  scroll-margin-top: 80px; /* Offset anchor scroll so fixed header doesn't cover titles */
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+/* Unified subtitle style (About, Services) to match hero-pretitle scheme */
+.section-subtitle {
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: 0.35em; /* match hero-pretitle tracking */
+  font-size: 0.9em;
+  margin-bottom: 40px;
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+}
+.section-subtitle::before,
+.section-subtitle::after {
+  content: "";
+  width: 35px;
+  height: 2px;
+  background: red;
+  display: inline-block;
+  border-radius: 2px;
+  vertical-align: middle;
+  transform: translateY(-3px);
+}
+.section-subtitle::before {
+  margin-right: 15px;
+}
+.section-subtitle::after {
+  margin-left: 15px;
+}
+
+/* Header & Navigation */
+.main-header {
+  background: red;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  /*border-bottom: 1px solid #eee;*/
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.logo img {
+  display: block;
+  height: 50px; /* adjust as needed */
+  width: auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul li {
+  margin-left: 20px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+/* Active link color similar to reference */
+.main-nav ul li a.active {
+  color: yellow;
+}
+
+/* Hover effects for navigation menu */
+.main-nav ul li a:hover {
+  color: yellow; /* Warna kuning yang sama dengan link aktif */
+}
+
+/* Language Switcher (CSS-only dropdown) */
+.main-nav li.lang-switcher {
+  position: relative;
+  display: inline-flex; /* keep hover box tight to button */
+  align-items: center;
+}
+
+.lang-current {
+  background: transparent;
+  border: none;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+.lang-current:hover {
+  color: yellow;
+}
+/* caret arrow visual */
+.lang-current .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 5px solid #333; /* default: caret points up */
+  transition: transform 180ms ease, border-bottom-color 180ms ease;
+  transform-origin: 50% 40%;
+}
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  min-width: 180px;
+  padding: 6px 0;
+  z-index: 1001;
+  /* hidden by default, animated open */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px) scale(0.98);
+  transition: opacity 160ms ease-out, transform 160ms ease-out,
+    visibility 0s linear 160ms;
+}
+.lang-menu li a {
+  display: block;
+  padding: 10px 14px;
+  color: #333;
+  text-decoration: none;
+  text-transform: none;
+}
+.lang-menu li a:hover,
+.lang-menu li a[aria-current="true"] {
+  background: #f6f6f6;
+}
+/* Open only when hovering the language button or the menu panel */
+/* Open only when hovering the language section (button or panel) */
+.main-nav li.lang-switcher:hover .lang-menu,
+.main-nav li.lang-switcher .lang-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
+}
+/* Rotate caret and tint when open */
+.main-nav li.lang-switcher:hover .lang-current .caret {
+  transform: rotate(180deg);
+  border-bottom-color: yellow; /* color while open */
+}
+/* Hero Section */
+.hero {
+  /* The visual image is rendered via ::before to allow smooth transitions */
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left like the reference */
+  align-items: center;
+  text-align: left; /* Left-align text */
+  color: #fff; /* White text like the reference */
+  overflow: hidden; /* Prevent scaled bg from spilling */
+  /* Keep solid fallback color; image handled by ::before for smooth GPU transforms */
+  background-color: #0d0d0d;
+}
+
+/* Background layer for hero with cover fit and no tiling */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("Images/wallofchina3.png") center/cover no-repeat;
+  transform: scale(1);
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  z-index: 0; /* base image layer */
+}
+
+/* Keep hero content above the background layer */
+.hero > .container {
+  position: relative;
+  z-index: 2; /* above overlay */
+  margin-left: 0; /* Override container centering */
+  padding-left: 20px; /* small gutter */
+}
+
+/* Dark overlay like the Pacific theme */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1; /* overlay above image */
+}
+
+/* On hover, slightly zoom the image layer (transform is GPU-accelerated) */
+.hero:hover::before {
+  transform: scale(1.03);
+}
+
+/* Hero play button & label */
+.hero .hero-actions {
+  position: absolute;
+  right: 1.25vw; /* park at the right end */
+  top: 45%; /* slight upward bias */
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.hero .hero-play {
+  width: 72px; /* slightly larger to match screenshot */
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background: red; /* solid red inner circle */
+  color: yellow; /* yellow play triangle */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* translucent orange halo around button */
+.hero .hero-play::before {
+  content: "";
+  position: absolute;
+  inset: -14px; /* creates the halo ring */
+  border-radius: 50%;
+  background: rgba(255, 90, 31, 0.25);
+  z-index: -1;
+  filter: blur(0.5px);
+  animation: pulse-halo 2.2s ease-in-out infinite;
+}
+.hero .hero-play:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+@keyframes pulse-halo {
+  0% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+}
+
+/* (Optional) You can add scroll-linked animations in modern browsers
+   using @supports and view-timeline properties for a stronger curtain effect. */
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Hero pretitle now "classic" using regular font instead of script */
+.hero-pretitle::before {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background: red; /* same as text color */
+  margin-right: 15px;
+  transform: translateY(-3px);
+  border-radius: 2px;
+}
+.hero-pretitle {
+  display: inline-block;
+  font-family: "Poppins", "Noto Sans SC", "Noto Sans TC", Arial, sans-serif; /* classic look */
+  font-size: clamp(0.85rem, 0.55vw + 0.7rem, 1.05rem);
+  letter-spacing: 0.35em; /* wide tracking for classic label feel */
+  text-transform: uppercase;
+  font-weight: 500;
+  color: red; /* slightly deeper orange */
+  margin-bottom: 18px;
+  position: relative;
+}
+.hero-pretitle::after {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background: red; /* same as text color */
+  margin-left: 15px;
+  transform: translateY(-3px);
+  border-radius: 2px;
+}
+
+/* Adjust hero heading to be bolder & tighter like reference */
+.hero h1 {
+  font-size: clamp(2.6rem, 5.5vw + 0.2rem, 4.5rem);
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.hero p {
+  font-size: clamp(0.95rem, 0.9vw + 0.6rem, 1.15rem);
+  line-height: 1.5;
+  max-width: 55vw; /* keep earlier constraint */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  margin-top: 8px;
+}
+
+/* Constrain hero text width so the right side is clear for the play button */
+.hero h1,
+.hero p {
+  max-width: 55vw;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: red; /* Reference red */
+  color: #fff;
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 4px;
+  transition: color 0.25s ease;
+}
+.btn:hover {
+  color: yellow;
+}
+
+/* Video modal styles */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-areas: "stack";
+  align-items: center;
+  justify-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease, visibility 0s linear 0.18s;
+  z-index: 2000;
+}
+.video-modal.open {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.video-modal .video-backdrop {
+  grid-area: stack;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+}
+.video-modal .video-dialog {
+  grid-area: stack;
+  background: #000;
+  width: min(920px, 92vw);
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  position: relative;
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.18s ease;
+}
+.video-modal.open .video-dialog {
+  transform: translateY(0) scale(1);
+}
+.video-modal .video-frame,
+.video-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.video-modal .video-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+.video-modal .video-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ================= Feature Intro Section (below hero) ================= */
+.feature-intro {
+  padding: 100px 0 70px; /* extra top to breathe after full-height hero */
+  background: #fff;
+  color: #333;
+}
+.feature-intro-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 640px 1fr; /* left card matrix fixedish width */
+  gap: 70px;
+  align-items: start;
+}
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 38px 30px; /* row gap first for vertical rhythm */
+}
+.fcard {
+  position: relative;
+  height: 260px;
+  border-radius: 0; /* screenshot shows sharp corners */
+  overflow: hidden;
+  color: #fff;
+  box-shadow: none;
+  background: #111; /* fallback */
+}
+.fcard::before {
+  /* image layer / tinted (brightened) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.78) saturate(0.95) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.32, 1);
+}
+.fcard::after {
+  /* bottom fade (lighter) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 42%,
+    rgba(0, 0, 0, 0.38) 92%
+  );
+  pointer-events: none;
+}
+/* Individual images (updated to existing PNG assets) */
+.fcard-blue::before {
+  background-image: url("Images/zhongwen.png");
+}
+.fcard-teal::before {
+  background-image: url("Images/passportvisa.png");
+}
+.fcard-mint::before {
+  background-image: url("Images/chineseridingbike.png");
+}
+.fcard-rose::before {
+  background-image: url("Images/chinamoderncity.png");
+}
+
+/* Tints to approximate screenshot color washes */
+.fcard-blue {
+  background: #15639d;
+}
+.fcard-teal {
+  background: #13746e;
+}
+.fcard-mint {
+  background: #1ca89e;
+}
+.fcard-rose {
+  background: #a13b4c;
+}
+.fcard-blue::before {
+  background-color: rgba(40, 140, 205, 0.35);
+}
+.fcard-teal::before {
+  background-color: rgba(30, 155, 145, 0.34);
+}
+.fcard-mint::before {
+  background-color: rgba(40, 190, 170, 0.34);
+}
+.fcard-rose::before {
+  background-color: rgba(225, 70, 100, 0.34);
+}
+
+.fcard-icon {
+  position: absolute;
+  top: -22px;
+  left: -10px;
+  background: #ff6f1d;
+  color: #fff;
+  padding: 34px 40px 26px; /* extra top to mimic offset */
+  font-size: 42px;
+  line-height: 1;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.4);
+  clip-path: inset(22px -40px -40px -40px); /* visually crops top flush */
+}
+.fcard-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px 28px 24px;
+}
+.fcard-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.fcard-text {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  font-weight: 400;
+  max-width: 215px;
+}
+.fcard:hover::before {
+  transform: scale(1.05);
+}
+.fcard:hover .fcard-icon {
+  background: #ff5a00;
+}
+
+.feature-copy {
+  max-width: 540px;
+}
+.feature-pretitle {
+  /* reuse hero-pretitle base but slight context shift */
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  margin-bottom: 28px;
+}
+.feature-heading {
+  font-size: clamp(2.15rem, 2.9vw + 1rem, 3.35rem);
+  line-height: 1.07;
+  margin: 0 0 30px;
+  font-weight: 600;
+  color: #222;
+}
+.feature-copy .lead {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 26px;
+}
+.feature-copy p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+
+.feature-copy .icon {
+  position: absolute;
+  right: 1.25vw; /* park at the right end */
+  top: 45%; /* slight upward bias */
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.feature-copy .icon {
+  width: 72px; /* slightly larger to match screenshot */
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background: red; /* solid red inner circle */
+  color: yellow; /* yellow play triangle */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* translucent orange halo around button */
+.feature-copy .icon::before {
+  content: "";
+  position: absolute;
+  inset: -14px; /* creates the halo ring */
+  border-radius: 50%;
+  background: rgba(255, 90, 31, 0.25);
+  z-index: -1;
+  filter: blur(0.5px);
+  animation: pulse-halo 2.2s ease-in-out infinite;
+}
+.feature-copy .icon:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+.feature-copy p {
+  margin-right: 100px; /* avoid overlap with icon */
+}
+
+@keyframes pulse-halo {
+  0% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+}
+.feature-cta {
+  background: red;
+  border: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= Destinations Section ================= */
+.destinations {
+  background: #f6f7f9; /* remove silhouette until asset provided */
+  padding: 110px 0 110px;
+  position: relative;
+}
+.destinations::before {
+  /* subtle top divider line */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.destinations-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+/* Destinations pretitle now inherits hero-pretitle appearance (red lines + uppercase) */
+.destinations-pretitle {
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: red;
+  text-transform: uppercase;
+  margin: 0 auto 34px;
+  position: relative;
+}
+/* Narrow right-side line to match hero-pretitle style */
+.destinations-pretitle::after {
+  width: 35px;
+  background: red;
+  border-radius: 2px;
+}
+.destinations-heading {
+  font-size: clamp(2.2rem, 2.5vw + 1rem, 3rem);
+  font-weight: 600;
+  margin: 0 0 60px;
+  color: #222;
+}
+.destinations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 55px;
+}
+.dest-card {
+  position: relative;
+  width: 340px;
+}
+.dest-media {
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  text-decoration: none; /* remove underline */
+}
+.dest-media img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.32, 1), filter 0.4s ease;
+}
+.dest-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: red;
+  color: yellow;
+  padding: 10px 28px 9px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%, 0 calc(100% - 14px));
+  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.3);
+}
+.dest-badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: red;
+  color: yellow;
+  padding: 10px 22px 9px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 30px 0 0 0;
+  box-shadow: 0 -4px 18px -4px rgba(0, 0, 0, 0.25);
+}
+.dest-media::after {
+  /* subtle overlay on hover */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.35) 95%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.dest-media:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.92) contrast(1.05);
+}
+.dest-media:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .dest-card {
+    width: 300px;
+  }
+  .dest-media img {
+    height: 300px;
+  }
+}
+@media (max-width: 800px) {
+  .destinations {
+    padding: 90px 0 90px;
+  }
+  .dest-card {
+    width: 260px;
+  }
+  .dest-media img {
+    height: 260px;
+  }
+  .destinations-pretitle {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+  .destinations-heading {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 600px) {
+  .destinations-inner {
+    padding: 0 24px;
+  }
+  .destinations-grid {
+    gap: 34px;
+  }
+  .destinations-pretitle {
+    font-size: 1.5rem;
+  }
+  .dest-label {
+    font-size: 0.8rem;
+    padding: 8px 18px 7px;
+  }
+  .dest-badge {
+    font-size: 0.7rem;
+    padding: 8px 14px 7px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .feature-intro-inner {
+    grid-template-columns: 560px 1fr;
+    gap: 60px;
+  }
+  .fcard {
+    height: 240px;
+  }
+}
+@media (max-width: 1050px) {
+  .feature-intro-inner {
+    grid-template-columns: 1fr;
+  }
+  .feature-cards {
+    order: 2;
+  }
+  .feature-copy {
+    order: 1;
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 650px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+  .fcard {
+    height: 220px;
+  }
+  .fcard-title {
+    font-size: 1rem;
+  }
+  .fcard-text {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .feature-intro {
+    padding: 80px 0 50px;
+  }
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+  height: 300px;
+  background: #ddd; /* Placeholder for image */
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensure any assigned image fills the box */
+  background-position: center;
+}
+
+/* Specific image for About section */
+.about .about-image {
+  background-image: url("Images/tiananmen.png");
+}
+
+/* Services Section */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 300px;
+  background: #000; /* fallback */
+  cursor: default;
+  isolation: isolate; /* so pseudo elements stay inside */
+  box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.32, 1),
+    box-shadow 0.4s ease;
+}
+.service-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.78) saturate(1.05);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.32, 1), filter 0.5s ease;
+  z-index: -2;
+}
+.service-card::before {
+  /* gradient wash + subtle tint */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 10%,
+      rgba(0, 0, 0, 0.55) 75%,
+      rgba(0, 0, 0, 0.85) 100%
+    ),
+    linear-gradient(135deg, rgba(255, 90, 31, 0.35), rgba(255, 180, 70, 0.15));
+  mix-blend-mode: normal;
+  opacity: 0.92;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+.service-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px 26px 24px;
+  text-align: left;
+  color: #fff;
+}
+.service-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.service-info p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 360px;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px -16px rgba(0, 0, 0, 0.45);
+}
+.service-card:hover .service-thumb {
+  transform: scale(1.08);
+  filter: brightness(0.9) saturate(1.1);
+}
+.service-card:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .service-card {
+    min-height: 260px;
+  }
+}
+@media (max-width: 600px) {
+  .service-card {
+    min-height: 240px;
+  }
+  .service-info {
+    padding: 20px 18px 18px;
+  }
+  .service-info h3 {
+    font-size: 1rem;
+  }
+  .service-info p {
+    font-size: 0.78rem;
+  }
+}
+
+/* Footer */
+.main-footer {
+  background: red;
+  color: yellow;
+}
+
+.main-footer .container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding : 0 0 0 0;
+  text-align: left;
+}
+
+.main-footer .footer-menu {
+  display: flex;
+  justify-content: flex-end; /* align to the right edge */
+  align-items: center;
+  gap: 20px; /* 20px spacing between texts */
+  margin-right: 15px;
+  padding: 0 0;
+  list-style: none;
+}
+
+.main-footer .footer-menu li {
+  margin: 0;
+}
+
+.main-footer .footer-menu a {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.main-footer .footer-menu a:hover {
+  color: yellow;
+}
+
+/* Footer Top (pre-footer) */
+.footer-top {
+  background: #fafafa;
+  padding: 60px 0;
+  color: #333;
+}
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  position: relative;
+}
+.footer-top-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.07; /* subtle city backdrop */
+  pointer-events: none;
+}
+.ft-col {
+  position: relative; /* above the backdrop */
+}
+.ft-col h3 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.ft-col p {
+  color: #666;
+  line-height: 1.8;
+}
+.list-plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list-plain li {
+  padding: 8px 0;
+  color: #777;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  color: #555;
+}
+.contact-list .icon {
+  display: inline-block;
+  width: 20px;
+}
+.socials {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: red;
+  color: yellow;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Column dividers */
+.footer-top .ft-col + .ft-col {
+  border-left: 1px solid #eee;
+  padding-left: 24px;
+}
+
+@media (max-width: 900px) {
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top .ft-col + .ft-col {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .service-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Hide floating play button on smaller viewports to prevent overlap */
+  .hero .hero-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ================= Header Wide Expansion =================
+   Allow header items (logo & nav) to drift toward viewport edges as width grows / user zooms out.
+   We only widen the header container so other sections keep their readable max-width. */
+.main-header .container {
+  max-width: none; /* remove 1100px cap just for header */
+  width: 100%;
+  padding-left: clamp(16px, 4vw, 90px);
+  padding-right: clamp(16px, 4vw, 90px);
+}
+/* Optional: gently limit extreme ultra-wide spacing */
+@media (min-width: 2200px) {
+  .main-header .container {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}

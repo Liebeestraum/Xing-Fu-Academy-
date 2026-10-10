@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸福学院 | Xing Fu Academy</title>
+    <link rel="icon" href="Images/幸福.ico" type="logo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="MainPage.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo"><img src="Images/幸福.png" alt="幸福学院 标志"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#services">服务</a></li>
+                    <li><a href="contact-zh-Hans.html">联系</a></li>
+                    <li class="lang-switcher">
+                        <button class="lang-current" aria-haspopup="true" aria-expanded="false" aria-label="切换语言">简 <span class="caret" aria-hidden="true"></span></button>
+                        <ul class="lang-menu" role="menu" aria-label="语言">
+                            <li role="none"><a role="menuitem" href="MainPage.html">English (EN)</a></li>
+                            <li role="none"><a role="menuitem" href="MainPage-zh-Hans.html" aria-current="true">简体中文 (Mandarin Chinese - Simplified)</a></li>
+                            <li role="none"><a role="menuitem" href="MainPage-zh-Hant.html">繁體中文 (Mandarin Chinese - Traditional)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <span class="hero-pretitle">幸福学院</span>
+            <h1 lang="zh-Hans">大家好！欢迎来到幸福学院！</h1>
+            <p>我们致力于帮助您在中国实现梦想与目标</p>
+        </div>
+        <div class="hero-actions">
+            <button class="hero-play" aria-haspopup="dialog" aria-controls="video-modal" aria-label="播放视频"
+                data-video="https://youtu.be/0DzZgBd4W1Q?si=LWJystPG9fLcrou8">
+                <span class="icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                        <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Feature Intro Section -->
+    <section class="feature-intro" id="intro-styles">
+        <div class="feature-intro-inner">
+            <div class="feature-cards">
+                <article class="fcard fcard-blue">
+                    <div class="fcard-body">
+                            <h3 class="fcard-title">汉语精进</h3>
+                            <p class="fcard-text">在全球最广泛使用的母语中建立扎实基础。</p>
+                    </div>
+                </article>
+                <article class="fcard fcard-teal">
+                    <div class="fcard-body">
+                            <h3 class="fcard-title">行前安排</h3>
+                            <p class="fcard-text">签证、材料支持与落地指导一次搞定。</p>
+                    </div>
+                </article>
+                <article class="fcard fcard-mint">
+                    <div class="fcard-body">
+                            <h3 class="fcard-title">个性化辅导</h3>
+                            <p class="fcard-text">导师陪伴式指导，帮助快速融入当地生活。</p>
+                    </div>
+                </article>
+                <article class="fcard fcard-rose">
+                    <div class="fcard-body">
+                            <h3 class="fcard-title">学习与探索定位</h3>
+                            <p class="fcard-text">帮助规划城市、院校与文化探索路线。</p>
+                    </div>
+                </article>
+            </div>
+            <div class="feature-copy">
+                 <span class="hero-pretitle feature-pretitle">欢迎来到幸福学院</span>
+                 <h2 class="feature-heading">与我们一起开启你的旅程！</h2>
+                 <p class="lead">走进世界最古老延续文明之一的真实脉动。</p>
+                 <p>不知道从哪里开始？别担心，中国会给你方向。</p>
+                 <p>想深造？这里拥有全球知名高校与活跃的 STEM 创新生态。</p>
+                 <p>热爱历史文化？数千年文明层层展开，塑造今日的现代强国。</p>
+                 <p>准备发展职业？各类机会等待具有潜力与才华的你。</p>
+                 <p>或有其他与中国相关的计划？别担心，中国会全方位接住你。</p>
+                 <a href="#services" class="btn feature-cta">开始探索</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section (学术路径) -->
+    <section class="destinations" id="destinations">
+        <div class="destinations-inner">
+            <span class="hero-pretitle destinations-pretitle">学术路径</span>
+            <h2 class="destinations-heading">选择您的学习方向</h2>
+            <div class="destinations-grid">
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="汉语与语言学 路径">
+                        <img src="Images/zhongwen.png" alt="汉字学习" loading="lazy">
+                        <span class="dest-label">汉语与语言学</span>
+                        <span class="dest-badge">核心</span>
+                    </a>
+                </article>
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="文化遗产与历史 路径">
+                        <img src="Images/ancientchinesetemple.png" alt="中国古建筑屋檐" loading="lazy">
+                        <span class="dest-label">文化遗产与历史</span>
+                        <span class="dest-badge">基础</span>
+                    </a>
+                </article>
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="现代中国与创新 路径">
+                        <img src="Images/chinamoderncity.png" alt="现代中国城市天际线" loading="lazy">
+                        <span class="dest-label">现代中国</span>
+                        <span class="dest-badge">城市</span>
+                    </a>
+                </article>
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="方言与多样性 路径">
+                        <img src="Images/chinesedialects.png" alt="汉语方言多样性概念" loading="lazy">
+                        <span class="dest-label">方言与多样性</span>
+                        <span class="dest-badge">进阶</span>
+                    </a>
+                </article>
+                <article class="dest-card">
+                    <a href="#services" class="dest-media" aria-label="日常生活适应 路径">
+                        <img src="Images/chineseridingbike.png" alt="本地日常骑行场景" loading="lazy">
+                        <span class="dest-label">日常适应</span>
+                        <span class="dest-badge">实践</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-subtitle">关于</div>
+            <h2>关于我们</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>幸福学院由就读于塔鲁玛纳加拉大学的大二学生于 2025 年创立，旨在帮助学生在中国实现他们的梦想，无论是留学、工作、度假，还是在这片拥有独特文明的土地上生活。</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-subtitle">服务</div>
+            <h2>我们的服务</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img class="service-thumb" src="Images/zhongwen.png" alt="汉语课程">
+                    <div class="service-info">
+                        <h3>汉语课程</h3>
+                        <p>在踏入中文世界之前提升您的语言能力。</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-thumb" src="Images/passportvisa.png" alt="签证、材料与移民服务">
+                    <div class="service-info">
+                        <h3>签证、材料与移民服务</h3>
+                        <p>为您踏上这片竹与熊猫之国的第一步提供指引。</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-thumb" src="Images/chineseridingbike.png" alt="初到中国生活工作坊">
+                    <div class="service-info">
+                        <h3>“初到中国生活”工作坊</h3>
+                        <p>为您提供适应中国新生活方式所需的关键知识与技能。</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-thumb" src="Images/chinesedialects.png" alt="汉语方言课程">
+                    <div class="service-info">
+                        <h3>汉语方言课程</h3>
+                        <p>深入了解丰富多样的汉语方言，与您的根源建立更深联系。</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-thumb" src="Images/chinamoderncity.png" alt="探索中国现代生活">
+                    <div class="service-info">
+                        <h3>探索中国现代生活</h3>
+                        <p>在世界强国的繁华都市中，发现充满活力的都市文化与现代生活方式。</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-thumb" src="Images/ancientchinesetemple.png" alt="探索中国古老一面">
+                    <div class="service-info">
+                        <h3>探索中国古老一面</h3>
+                        <p>回到历史长河，沉浸于中国丰厚的历史与文化遗产之中。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Overlap Section -->
+    <section class="promo-overlap" id="promo">
+        <div class="promo-banner" aria-hidden="true">
+            <button class="promo-play" aria-haspopup="dialog" aria-label="播放概览视频" data-video="https://www.youtube.com/embed/ysz5S6PUM-U">
+                <span class="triangle" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="promo-inner">
+            <figure class="promo-photo">
+                <img src="Images/wallofchina2.png" alt="万里长城 山峦日出" loading="lazy">
+            </figure>
+            <div class="promo-copy">
+                 <span class="promo-pretitle">探索中国</span>
+                 <h2 class="promo-heading">让你的中国梦想<br>与好奇真正落地</h2>
+                 <p class="promo-text">我们陪你看到更真实的中国：无论是学习、文化、城市节奏还是个人成长目标，都能在这里找到路径。</p>
+                 <a href="#destinations" class="btn promo-cta">开始规划</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Recent Post Section (简体中文) -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <span class="hero-pretitle blog-pretitle">最新贴文</span>
+            <h2 class="blog-heading">近期文章</h2>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-media">
+                        <img src="Images/chinamoderncity.png" alt="现代中国城市黄昏景致">
+                        <div class="post-date"><span class="day">11</span><span class="date-meta"><span class="year">2025</span><span class="month">九月</span></span></div>
+                    </div>
+                    <div class="post-body">
+                        <h3 class="post-title">世界上最受欢迎的地方</h3>
+                        <a href="#" class="post-read">阅读更多</a>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="post-media">
+                        <img src="Images/chineseridingbike.png" alt="骑自行车体验本地文化">
+                        <div class="post-date"><span class="day">11</span><span class="date-meta"><span class="year">2025</span><span class="month">九月</span></span></div>
+                    </div>
+                    <div class="post-body">
+                        <h3 class="post-title">世界上最受欢迎的地方</h3>
+                        <a href="#" class="post-read">阅读更多</a>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="post-media">
+                        <img src="Images/ancientchinesetemple.png" alt="中国古老寺庙建筑">
+                        <div class="post-date"><span class="day">11</span><span class="date-meta"><span class="year">2025</span><span class="month">九月</span></span></div>
+                    </div>
+                    <div class="post-body">
+                        <h3 class="post-title">世界上最受欢迎的地方</h3>
+                        <a href="#" class="post-read">阅读更多</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section (简体中文) -->
+    <section class="cta-banner fixed-size has-image" id="cta">
+        <div class="cta-inner">
+            <h2 class="cta-heading">幸福学院</h2>
+            <p class="cta-text">与我们一起，把你对中国的梦想与抱负真正握在自己手中，迈出实现的第一步。</p>
+            <a href="contact-zh-Hans.html" class="btn cta-btn">索取报价</a>
+        </div>
+    </section>
+
+    <section class="footer-top">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div class="ft-col">
+                    <h3>关于</h3>
+                    <p>探索古今交融的国度。</p>
+                    <div class="socials">
+                        <a href="#" class="social" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="ft-col">
+                    <h3>信息</h3>
+                    <ul class="list-plain">
+                        <li>在线咨询</li>
+                        <li>一般咨询</li>
+                        <li>预订条款</li>
+                        <li>隐私与政策</li>
+                        <li>退款政策</li>
+                        <li>联系我们</li>
+                    </ul>
+                </div>
+                <div class="ft-col">
+                    <h3>体验</h3>
+                    <ul class="list-plain">
+                        <li>探索中国</li>
+                        <li>中国生活</li>
+                        <li>在中国工作</li>
+                        <li>中国自然</li>
+                        <li>中国节日与纪念日</li>
+                        <li>中国教育</li>
+                    </ul>
+                </div>
+                <div class="ft-col">
+                    <h3>有问题吗？</h3>
+                    <ul class="contact-list">
+                        <li><span class="icon">📍</span> 中国北京总部</li>
+                        <li><span class="icon">☎️</span> +86 10 1234 5678</li>
+                        <li><span class="icon">✉️</span> helpinquiries@xingfuacademy.co.cn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 幸福学院。保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="介绍视频">
+        <div class="video-backdrop" data-close="true"></div>
+        <div class="video-dialog" role="document">
+            <button class="video-close" aria-label="关闭视频" title="关闭">&times;</button>
+            <div class="video-frame">
+                <iframe src="" title="介绍视频" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const triggers = document.querySelectorAll('[data-video]');
+        const modal = document.getElementById('video-modal');
+        const iframe = modal ? modal.querySelector('iframe') : null;
+        const closeBtn = modal ? modal.querySelector('.video-close') : null;
+        let lastFocus = null;
+
+        function normalizeYouTube(url){
+            if(!url) return '';
+            const ytRegex = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{6,})/;
+            const match = url.match(ytRegex);
+            if(match && match[1]) return 'https://www.youtube.com/embed/' + match[1];
+            return url;
+        }
+        function withAutoplay(url){
+            if (!url) return '';
+            const clean = normalizeYouTube(url);
+            return clean.includes('?') ? clean + '&autoplay=1' : clean + '?autoplay=1';
+        }
+        function openModal(url){
+            if (!modal || !iframe) return;
+            lastFocus = document.activeElement;
+            iframe.src = withAutoplay(url);
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden','false');
+            setTimeout(()=>{ try{ closeBtn && closeBtn.focus(); }catch(e){} }, 0);
+            document.addEventListener('keydown', onKey);
+        }
+        function closeModal(){
+            if (!modal || !iframe) return;
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden','true');
+            iframe.src = '';
+            document.removeEventListener('keydown', onKey);
+            if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        }
+        function onKey(e){ if (e.key === 'Escape') closeModal(); }
+
+        triggers.forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                const url = btn.getAttribute('data-video') || 'https://www.youtube.com/embed/0DzZgBd4W1Q';
+                openModal(url);
+            });
+        });
+        if (modal) {
+            modal.addEventListener('click', function(e){
+                if (e.target === modal || e.target.dataset.close === 'true') closeModal();
+            });
+        }
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    })();
+    </script>
+
+</body>
+</html>
